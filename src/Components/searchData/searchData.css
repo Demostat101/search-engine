@@ -1,0 +1,12 @@
+.result-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 0px solid black;
+}
+
+.result-page p{
+    margin-bottom: 10px;
+}

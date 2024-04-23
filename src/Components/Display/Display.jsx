@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import {  useNavigate } from 'react-router-dom'
-import Header from '../Components/Header/Header';
-import SearchData from '../Components/searchData/SearchData';
+import Header from '../Header/Header';
+import SearchData from '../searchData/SearchData';
 
 
 const SearchDisplay = ({search, googledData, searchsetter})=>{
@@ -19,12 +19,12 @@ const SearchDisplay = ({search, googledData, searchsetter})=>{
     
 
     return(
-        <>
+        <div className='search-box-container'>
             <Header search={search} searchsetter={searchsetter}/>
              <div>
             <SearchData googledData={googledData}/>
             </div>
-        </>
+        </div>
        
     )
 }

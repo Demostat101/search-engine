@@ -1,0 +1,80 @@
+[data-theme='dark'] {
+    --bg-color:#333333 ;
+    --text-color: #ffffff;
+    --heading-color: yellow;
+    --header-color:indigo;
+    --hr-color:white;
+}
+
+[data-theme='light'] {
+    --bg-color:#ffffff ;
+    --text-color: #222222;
+    --heading-color: green;
+    --header-color:indigo;
+    --hr-color:black;
+}
+
+
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+
+.search-data-result{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 1em 0;
+}
+
+.search-data{
+    border: 1px solid hsla(0, 0%, 80, 1);
+    border-radius: 5px;
+    padding: 0.5em;
+    width: 320px;
+    height: 200px;
+    text-align: center;
+    box-shadow: 5px 5px 5px hsla(0, 0%, 80%, 0.2);
+    color: var(--text-color)
+}
+
+
+
+
+
+
+.search-box-container{
+    width: 100%;
+    /* height: 100vh; */
+    background:linear-gradient(rgba(10, 7, 255, 0.2), rgba(232, 231, 255, 0.2)), url("./assets/images/mn.avif");
+    background-repeat: none;
+    background-size: cover;
+   padding: 20px;
+   background-color: var(--bg-color);
+ 
+}
+
+.logoName{
+    color: var(--heading-color)
+}
+
+hr{
+    border-color: var(--hr-color);
+}
+
+a{
+    color: var(--header-color);
+}
+
+h4{
+    color: var(--header-color);
+}
+
+.dark {
+    color: #222222;
+}

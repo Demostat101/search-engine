@@ -1,9 +1,13 @@
 import { NavLink } from "react-router-dom";
-import logo from './images/logo.png'
+
 import { useEffect, useState } from "react";
 import { FaMicrophone } from "react-icons/fa";
 import { MdCancel } from "react-icons/md";
 import { FaSearch } from "react-icons/fa";
+import "./Header.css"
+import { useTheme } from "../../ThemeContext";
+import { FaSun } from "react-icons/fa6";
+import { FaMoon } from "react-icons/fa6";
 
 const SearchHeader = ({search, searchsetter})=>{
     const [searchText, setSearchText] = useState('');
@@ -29,22 +33,37 @@ const SearchHeader = ({search, searchsetter})=>{
     const ClearInput = ()=>{
         setSearchText('');
     } 
+
+    const { theme, toggleTheme } = useTheme();
    
     return(
        
-       <div>
-            <NavLink to={"/"}>
-                <img src={logo} alt="Product Logo" />
-            </NavLink>
+       <div className="resultPage" >
 
-            <div style={{width:"60%", display:"flex", border:'2px solid black',padding:"10px",justifyContent:"center", alignItems:"center"}}>
-            <FaSearch onClick={HandleSearch}/>
-            <form style={{width:"100% "}} onSubmit={SubmitHandler}>
+        <div className="toggle">
+            {theme === "light" ? (
+              <FaMoon
+                className={theme === "dark" ? "dark" : ""}
+                onClick={toggleTheme}
+              />
+            ) : (
+              <FaSun
+                className={theme === "light" ? "light" : ""}
+                onClick={toggleTheme}
+              />
+            )}
+          </div>
+
+            <div className="searchBox">
+            <FaSearch className={theme === "dark" ? "dark" : "light"} onClick={HandleSearch} size={20}/>
+            <form  onSubmit={SubmitHandler}>
                 <input type="text" value={searchText} onChange={(e)=>setSearchText(e.target.value)} style={{width:"100%"}}/>
             </form>
-            {searchText? <MdCancel onClick={ClearInput}/>:null}
-            <button><FaMicrophone id='mic'/></button>
+            {searchText? <MdCancel className={theme === "dark" ? "dark" : "light"} onClick={ClearInput} size={20}/>:null}
+            
             </div>
+
+            <FaMicrophone  id='mic' size={30} />
         </div>
     )
 }

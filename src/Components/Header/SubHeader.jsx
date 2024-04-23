@@ -1,10 +1,11 @@
 import { NavLink } from "react-router-dom";
 import { CiSearch } from "react-icons/ci";
 import { MdApps } from "react-icons/md";
+import "./Header.css"
 
 const SubHeader = ()=>{
     return(
-        <div >
+        <div className="menus">
             <ul style={{display:"flex"}}>
                 <li style={{listStyleType:"none"}}>
                     <NavLink to={'/'}>

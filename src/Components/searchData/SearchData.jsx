@@ -1,18 +1,29 @@
+import "./searchData.css"
 import Data from "../Data/Data";
 
+
 const SearchData = ({googledData})=>{
+
+ 
+
     return(
-        <div>
+        <div className="result-page">
+
+
+
             <p>
             All {googledData.searchInformation.formattedTotalResults }
             results found in {googledData?.searchInformation.formattedSearchTime } sec
             </p>
 
-            {
-                googledData.items.map((data,index)=>(
-                   <div key={index}> <Data data={data} index={index}/></div>
-                ))
-            }
+            <div className="search-data-result">
+                {
+                    googledData.items.map((data,index)=>(
+                    <div className="search-data" key={index}> <Data data={data} index={index}/></div>
+                    ))
+                }
+            </div>
+
         </div>
     )
 }
